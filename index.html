@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For เบบี๋ 💗</title>
+  <meta name="theme-color" content="#ff6fb4" />
+  <style>
+    :root{
+      --bg1:#ffffff;
+      --bg2:#fff6fb;
+      --bg3:#f3fbff;
+
+      --pink:#ff4fa3;
+      --pink2:#ff8fc8;
+      --lav:#7b61ff;
+      --mint:#30e3ca;
+      --gold:#ffd166;
+
+      --text:#2b2b2b;
+      --muted: rgba(40,40,40,.68);
+
+      --shadow: 0 18px 65px rgba(255,79,163,.15), 0 18px 55px rgba(0,0,0,.06);
+      --radius: 26px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 900px at 12% 12%, rgba(255,79,163,.20), transparent 58%),
+        radial-gradient(1000px 800px at 88% 18%, rgba(123,97,255,.16), transparent 56%),
+        radial-gradient(900px 900px at 50% 92%, rgba(48,227,202,.12), transparent 58%),
+        linear-gradient(180deg, var(--bg1), var(--bg2), var(--bg3));
+      overflow-x:hidden;
+    }
+
+    .sparkle{
+      position:fixed; inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(2px 2px at 12% 22%, rgba(255,255,255,.95), transparent 60%),
+        radial-gradient(2px 2px at 72% 18%, rgba(255,255,255,.75), transparent 60%),
+        radial-gradient(2px 2px at 38% 66%, rgba(255,255,255,.85), transparent 60%),
+        radial-gradient(2px 2px at 88% 72%, rgba(255,255,255,.90), transparent 60%);
+      opacity:.55;
+      animation: tw 6s ease-in-out infinite alternate;
+      z-index:0;
+      filter: blur(.2px);
+    }
+    @keyframes tw{ from{opacity:.35} to{opacity:.62} }
+
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.40));
+      border-bottom: 1px solid rgba(255,79,163,.10);
+    }
+    .topbar{
+      max-width: 1050px;
+      margin:0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      user-select:none;
+    }
+    .logo{
+      width:42px; height:42px;
+      border-radius: 16px;
+      background:
+        radial-gradient(14px 14px at 30% 30%, rgba(255,255,255,.95), transparent 60%),
+        linear-gradient(135deg, rgba(255,79,163,.98), rgba(123,97,255,.85));
+      box-shadow: 0 16px 45px rgba(255,79,163,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-45%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent);
+      transform: rotate(18deg) translateX(-70%);
+      animation: shine 2.4s ease-in-out infinite;
+    }
+    @keyframes shine{
+      0%{ transform: rotate(18deg) translateX(-70%); opacity:0; }
+      35%{ opacity:.95; }
+      65%{ opacity:.95; }
+      100%{ transform: rotate(18deg) translateX(70%); opacity:0; }
+    }
+    .brand .t1{ font-weight: 950; letter-spacing:-.4px; }
+    .brand .t2{ font-size:12px; color: var(--muted); margin-top:2px; }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(255,79,163,.14);
+      box-shadow: 0 10px 30px rgba(255,79,163,.08);
+      color: rgba(40,40,40,.78);
+      font-size: 13px;
+      white-space:nowrap;
+    }
+
+    .btn{
+      border: 1px solid rgba(255,79,163,.18);
+      background: rgba(255,255,255,.70);
+      color: rgba(35,35,35,.92);
+      padding: 10px 12px;
+      border-radius: 16px;
+      box-shadow: 0 14px 38px rgba(0,0,0,.06);
+      cursor:pointer;
+      transition: transform .12s ease, filter .12s ease, border-color .12s ease;
+      user-select:none;
+      font-weight: 850;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(1.02); border-color: rgba(255,79,163,.28); }
+    .btn:active{ transform: translateY(0) scale(.99); }
+    .btn.primary{
+      border:none;
+      color:white;
+      background: linear-gradient(135deg, rgba(255,79,163,.98), rgba(255,143,200,.98));
+      box-shadow: 0 20px 55px rgba(255,79,163,.24);
+    }
+    .btn.soft{
+      border: 1px dashed rgba(255,79,163,.26);
+      background: rgba(255,255,255,.55);
+    }
+
+    .wrap{
+      position:relative;
+      z-index:10;
+      max-width:1050px;
+      margin:0 auto;
+      padding: 18px 18px 110px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 18px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.50));
+      border: 1px solid rgba(255,79,163,.12);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:-120px -120px auto auto;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,79,163,.18), transparent 65%);
+      pointer-events:none;
+    }
+    .card:after{
+      content:"";
+      position:absolute;
+      inset:auto auto -150px -150px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle at 30% 30%, rgba(123,97,255,.12), transparent 65%);
+      pointer-events:none;
+    }
+
+    .hero{ padding: 22px; }
+    h1{
+      margin: 8px 0 8px;
+      font-size: clamp(30px, 4.2vw, 54px);
+      line-height: 1.06;
+      letter-spacing: -1px;
+    }
+    .sub{
+      margin:0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .stamp{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.62);
+      border: 1px solid rgba(255,79,163,.16);
+      box-shadow: 0 18px 42px rgba(255,79,163,.10);
+      color: rgba(40,40,40,.82);
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 10px;
+      position:relative;
+      overflow:hidden;
+    }
+    .stamp:after{
+      content:"";
+      position:absolute; inset:-40% -40%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.9), transparent);
+      transform: rotate(14deg) translateX(-70%);
+      animation: shine 2.8s ease-in-out infinite;
+      opacity:.45;
+    }
+
+    .typebox{
+      margin-top: 12px;
+      padding: 14px 14px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,79,163,.14);
+      background: rgba(255,255,255,.60);
+      position:relative;
+      overflow:hidden;
+    }
+    .typebox:before{
+      content:"";
+      position:absolute; inset:-70px -70px auto auto;
+      width:180px; height:180px;
+      background: radial-gradient(circle at 30% 30%, rgba(48,227,202,.12), transparent 65%);
+      pointer-events:none;
+    }
+    .type{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 14px;
+      color: rgba(25,25,25,.86);
+      white-space: pre-wrap;
+      min-height: 54px;
+      position:relative;
+      z-index:2;
+    }
+    .caret{ display:inline-block; width:10px; animation: blink 1s step-end infinite; opacity:.8; }
+    @keyframes blink{ 50%{ opacity:0; } }
+
+    .actions{
+      margin-top: 14px;
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .side{
+      padding: 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+
+    /* ✅ รูป: ตอนยังไม่มีรูป ให้สวยด้วยสัดส่วน 4:3 */
+    .photo{
+      border-radius: 24px;
+      border: 1px solid rgba(255,79,163,.12);
+      overflow:hidden;
+      background: rgba(255,255,255,.55);
+      aspect-ratio: 4 / 3;
+      position:relative;
+      display:grid;
+      place-items:center;
+    }
+
+    /* ✅ พอมีรูปจริง: ให้กรอบ “ยืดตามรูป” */
+    .photo.has-img{
+      aspect-ratio: auto;     /* สำคัญ */
+      display:block;          /* ให้สูงตามรูป */
+    }
+
+    .photo img{
+      width:100%;
+      height:auto;            /* ✅ สูงตามรูป */
+      display:block;          /* ✅ กันช่องว่างใต้รูป */
+      object-fit: unset;      /* ✅ ไม่ครอป */
+      filter: saturate(1.05) contrast(1.02);
+    }
+
+    .ph{
+      text-align:center;
+      padding: 18px;
+      color: rgba(40,40,40,.74);
+      line-height: 1.7;
+    }
+    .ph b{ display:block; margin-bottom:6px; color: rgba(35,35,35,.92); }
+
+    .meter{
+      border-radius: 24px;
+      border: 1px solid rgba(255,79,163,.12);
+      background: rgba(255,255,255,.58);
+      padding: 14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .meter h3{
+      margin:0 0 10px;
+      font-size: 13px;
+      color: rgba(35,35,35,.86);
+      letter-spacing:.2px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+    }
+    .bar{
+      height: 14px;
+      background: rgba(255,79,163,.10);
+      border: 1px solid rgba(255,79,163,.14);
+      border-radius: 999px;
+      overflow:hidden;
+      position:relative;
+    }
+    .fill{
+      height:100%;
+      width: 0%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,79,163,.98), rgba(255,209,102,.92), rgba(48,227,202,.80));
+      transition: width 1.2s cubic-bezier(.2,.9,.2,1);
+      position:relative;
+    }
+    .pulse{
+      position:absolute; right: -18px; top: 50%;
+      transform: translateY(-50%);
+      width: 34px; height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,0) 55%),
+                  linear-gradient(135deg, rgba(255,79,163,.98), rgba(123,97,255,.80));
+      box-shadow: 0 18px 40px rgba(255,79,163,.18);
+      animation: beat .9s ease-in-out infinite;
+    }
+    @keyframes beat{
+      0%,100%{ transform: translateY(-50%) scale(1); }
+      50%{ transform: translateY(-50%) scale(1.10); }
+    }
+    .meter p{
+      margin:10px 0 0;
+      color: rgba(40,40,40,.70);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    section{ margin-top: 18px; }
+
+    .sec-title{
+      display:flex; align-items:baseline; justify-content:space-between;
+      gap:10px;
+      padding: 0 2px;
+      margin-bottom: 10px;
+    }
+    .sec-title h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing:.2px;
+      color: rgba(35,35,35,.92);
+    }
+
+    .promise{ padding: 16px; }
+    .scroll{
+      max-height: 240px;
+      overflow:auto;
+      padding: 14px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,79,163,.12);
+      background: rgba(255,255,255,.58);
+      line-height: 1.9;
+      color: rgba(35,35,35,.82);
+    }
+    .scroll b{ color: rgba(35,35,35,.92); }
+    .scroll::-webkit-scrollbar{ height:10px; width:10px; }
+    .scroll::-webkit-scrollbar-thumb{ background: rgba(255,79,163,.18); border-radius: 999px; }
+    .scroll::-webkit-scrollbar-track{ background: rgba(255,79,163,.06); border-radius: 999px; }
+
+    .question{ padding: 18px; }
+    .qbox{
+      border-radius: 24px;
+      border: 1px solid rgba(255,79,163,.12);
+      background: rgba(255,255,255,.60);
+      padding: 16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .qbox h3{ margin:0 0 6px; font-size: 20px; }
+    .qbox p{ margin:0; color: rgba(40,40,40,.72); line-height:1.8; font-size: 14px; }
+
+    .qactions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 12px;
+      position:relative;
+      min-height: 50px;
+    }
+    #btnNo{ position:relative; }
+
+    canvas#fx{
+      position:fixed; inset:0;
+      pointer-events:none;
+      z-index: 80;
+      display:none;
+    }
+    canvas#fx.show{ display:block; }
+
+    .heart{
+      position:fixed;
+      bottom:-30px;
+      font-size: 18px;
+      z-index: 70;
+      pointer-events:auto;
+      cursor: default;
+      user-select:none;
+      filter: drop-shadow(0 12px 14px rgba(255,79,163,.14));
+      animation: floatUp linear forwards;
+      opacity:.95;
+      padding: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.00);
+      -webkit-tap-highlight-color: transparent;
+    }
+    @keyframes floatUp{
+      from{ transform: translateY(0) translateX(0) rotate(0deg); opacity:0; }
+      10%{ opacity:.95; }
+      to{ transform: translateY(-120vh) translateX(var(--drift)) rotate(360deg); opacity:0; }
+    }
+
+    .spark-word{
+      position:fixed;
+      left:0; top:0;
+      z-index: 999;
+      pointer-events:none;
+      font-weight: 950;
+      letter-spacing: -.2px;
+      font-size: 18px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,79,163,.18);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 18px 50px rgba(255,79,163,.18), 0 18px 60px rgba(0,0,0,.08);
+      transform: translate(-50%, -140%);
+      opacity: 0;
+      animation: popSpark .85s ease forwards;
+    }
+    .spark-word .txt{
+      background: linear-gradient(90deg, rgba(255,79,163,1), rgba(123,97,255,1), rgba(48,227,202,1), rgba(255,143,200,1));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+      filter: drop-shadow(0 10px 18px rgba(255,79,163,.12));
+    }
+    .spark-word:after{
+      content:"";
+      position:absolute; inset:-12px -14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.9), transparent);
+      transform: rotate(10deg) translateX(-70%);
+      animation: sweep .55s ease forwards;
+      opacity:.55;
+      pointer-events:none;
+    }
+    @keyframes sweep{
+      to{ transform: rotate(10deg) translateX(70%); opacity:0; }
+    }
+    @keyframes popSpark{
+      0%{ opacity:0; transform: translate(-50%, -120%) scale(.92); }
+      20%{ opacity:1; transform: translate(-50%, -155%) scale(1.02); }
+      100%{ opacity:0; transform: translate(-50%, -210%) scale(.98); }
+    }
+
+    .modal{
+      position:fixed; inset:0;
+      display:none;
+      align-items:center; justify-content:center;
+      padding: 18px;
+      background: rgba(255,255,255,.55);
+      backdrop-filter: blur(12px);
+      z-index: 120;
+    }
+    .modal.show{ display:flex; }
+    .modal .inner{
+      max-width: 620px;
+      width: 100%;
+      border-radius: 30px;
+      border: 1px solid rgba(255,79,163,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.58));
+      box-shadow: 0 30px 100px rgba(255,79,163,.15), 0 25px 70px rgba(0,0,0,.08);
+      overflow:hidden;
+      position:relative;
+    }
+    .modal .head{
+      padding: 18px 18px 0;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+    }
+    .modal .head h3{ margin:0; font-size: 16px; color: rgba(35,35,35,.88); }
+    .modal .body{ padding: 10px 18px 18px; }
+    .bigTitle{
+      font-size: clamp(30px, 4.2vw, 46px);
+      margin: 10px 0 10px;
+      letter-spacing: -1px;
+      font-weight: 980;
+      color: rgba(35,35,35,.95);
+    }
+    .modal .body p{
+      margin:0;
+      color: rgba(40,40,40,.76);
+      line-height:1.9;
+      font-size: 14px;
+    }
+    .modal .foot{
+      padding: 0 18px 18px;
+      display:flex; justify-content:flex-end; gap: 10px; flex-wrap:wrap;
+    }
+
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform: translateX(-50%);
+      z-index: 130;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,79,163,.16);
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.08);
+      color: rgba(35,35,35,.88);
+      font-weight: 900;
+      display:none;
+      max-width: calc(100vw - 28px);
+      text-align:center;
+    }
+    .toast.show{ display:block; animation: pop .18s ease; }
+    @keyframes pop{ from{ transform: translateX(-50%) scale(.98); opacity:.4; } to{ transform: translateX(-50%) scale(1); opacity:1; } }
+
+    footer{
+      margin-top: 22px;
+      text-align:center;
+      color: rgba(40,40,40,.55);
+      font-size: 12px;
+      padding-top: 8px;
+    }
+
+    @media (orientation: landscape) and (max-height: 520px){
+      .topbar{ padding: 10px 14px; }
+      .wrap{ padding: 12px 14px 70px; }
+      .grid{ gap: 12px; }
+      .hero{ padding: 16px; }
+      .side{ padding: 12px; gap: 10px; }
+      h1{ font-size: clamp(24px, 3.2vw, 40px); }
+      .sub{ font-size: 14px; line-height: 1.65; margin-bottom: 10px; }
+      .typebox{ margin-top: 10px; padding: 10px; border-radius: 20px; }
+      .type{ min-height: 38px; font-size: 13px; }
+      .actions{ margin-top: 10px; gap: 8px; }
+      .btn{ padding: 9px 10px; border-radius: 14px; }
+      .scroll{ max-height: 170px; }
+      .question{ padding: 14px; }
+      .qbox{ padding: 14px; border-radius: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sparkle"></div>
+  <canvas id="fx"></canvas>
+
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="t1">For เบบี๋ 💗</div>
+          <div class="t2">อบอุ่น หนักแน่น ตั้งใจจริง</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+        <span class="pill" id="pillDate">📅</span>
+        <button class="btn" id="btnMusic" type="button">🎵 เปิดเพลง</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="grid">
+      <div class="card hero">
+        <div class="stamp" id="stampText">💘 made with heart</div>
+
+        <h1 id="headline">เบบี๋เรียกเค้าว่า "ปะปี๊" ทีไร เค้ารู้สึกเหมือนได้กลับบ้านทุกครั้ง 💗</h1>
+        <p class="sub" id="introText">เว็บนี้ปะปี๊ทำให้เบบี๋คนเดียว เพราะเค้าเลือกเบบี๋จริงๆ</p>
+
+        <div class="typebox">
+          <div class="type" id="typeText"></div><span class="caret">▍</span>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" id="btnStart" type="button">✨ เปิดข้อความ</button>
+          <button class="btn" id="btnRain" type="button">💗 โปรยหัวใจ</button>
+          <button class="btn soft" id="btnCopy" type="button">📋 คัดลอกข้อความ</button>
+          <button class="btn" id="btnBoom" type="button">🎀 ฉลองแบบว้าว</button>
+        </div>
+      </div>
+
+      <div class="card side">
+        <div class="photo" id="mainPhoto">
+          <div class="ph">
+            <b>อยากใส่รูปคู่ก็ตามนี้เลย</b>
+            เอารูปไว้โฟลเดอร์เดียวกับ <b>index.html</b><br>
+            แล้วใส่ชื่อไฟล์ใน <b>PHOTO_URL</b>
+          </div>
+        </div>
+
+        <div class="meter">
+          <h3>
+            💞 Love Meter
+            <span class="pill" id="meterLabel">กำลังชาร์จ</span>
+          </h3>
+          <div class="bar">
+            <div class="fill" id="meterFill"><div class="pulse" aria-hidden="true"></div></div>
+          </div>
+          <p>ลองเอาเมาส์ไปชี้หัวใจลอยๆ จะมีคำว่า <b>ปะปี๊</b> เด้งวิ้งๆ ขึ้นมา</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="card promise">
+        <div class="sec-title">
+          <h2>📜 สัญญาจากปะปี๊</h2>
+          <span class="pill">เลื่อนอ่านได้</span>
+        </div>
+        <div class="scroll" id="promiseScroll"></div>
+      </div>
+
+      <div class="card question">
+        <div class="sec-title">
+          <h2>💞 ตอบหน่อยนะ</h2>
+          <span class="pill">เขินนิด ๆ</span>
+        </div>
+
+        <div class="qbox">
+          <h3 id="qTitle">เป็นแฟนกันนะ 🥺</h3>
+          <p id="qDesc">ปะปี๊อยากอยู่ข้างๆหนูตลอดไปเลย</p>
+
+          <div class="qactions" id="qActions">
+            <button class="btn primary" id="btnYes" type="button">ใช่ 💖</button>
+            <button class="btn soft" id="btnNo" type="button">ไม่ 😶</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      ทำให้เบบี๋คนเดียว 💗
+    </footer>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="inner">
+      <div class="head">
+        <h3>เย้ เราเป็นแฟนกันแล้ว 💞</h3>
+        <button class="btn" id="btnClose" type="button">ปิด</button>
+      </div>
+      <div class="body">
+        <div class="bigTitle" id="acceptTitle">เบบี๋ตอบใช่แล้ว 💘</div>
+        <p id="acceptMsg">ขอบคุณที่เลือกปะปี๊นะ ปะปี๊จะดูแลเบบี๋ให้ดีที่สุดเลย</p>
+      </div>
+      <div class="foot">
+        <button class="btn primary" id="btnMore" type="button">🎊 ฉลองอีก</button>
+        <button class="btn" id="btnHint" type="button">💌 วิธีส่ง</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <audio id="bgm" preload="auto"></audio>
+
+  <script>
+    /********************
+     * ตั้งค่า
+     ********************/
+    const YOUR_NAME = "เค้า";
+    const LOVER_NAME = "เบบี๋";
+    const BABY_CALLS_ME = "ปะปี๊";
+    const DATE_TEXT = "วันของเรา: 14 ก.พ. 2026";
+
+    // วางไฟล์รูป/เพลงไว้โฟลเดอร์เดียวกับ index.html แล้วใส่ชื่อไฟล์ตรงนี้
+    const PHOTO_URL = "love.jpg"; // เช่น "couple.jpg"
+    const MUSIC_URL = "- YONIA OFFICIAL MV.mp3"; // เช่น "song.mp3"
+
+    /********************
+     * ข้อความ (โหมดแฟนผู้ใหญ่)
+     ********************/
+    const HEADLINE = `เบบี๋เรียกเค้าว่า "${BABY_CALLS_ME}" ทีไร เค้ารู้สึกเหมือนได้กลับบ้านทุกครั้ง 💗`;
+    const INTRO = `เว็บนี้ปะปี๊ทำให้เบบี๋คนเดียว เพราะเค้าอยากบอกให้ชัดๆ ว่าเค้าเลือกเบบี๋จริงๆ`;
+
+    const TYPE_LINES = [
+      `ถึง ${LOVER_NAME}`,
+      `เค้าไม่รู้หรอกว่าคำว่า "รัก" ที่ดีที่สุดหน้าตาเป็นยังไง`,
+      `แต่เค้ารู้ว่าเวลาได้อยู่กับเบบี๋ เค้าอยากเป็นคนที่ดูแลให้ดีที่สุดเท่าที่ทำได้`,
+      `เค้าไม่ได้อยากรักแค่ตอนที่ทุกอย่างโอเค`,
+      `เค้าอยากรักตอนที่เบบี๋เหนื่อย ตอนที่เบบี๋กังวล ตอนที่เบบี๋เงียบไป`,
+      `ถ้าวันไหนโลกหนักไป เบบี๋ไม่ต้องเก่งก็ได้`,
+      `ให้ปะปี๊เป็นที่พักให้เบบี๋ได้ ให้ปะปี๊เป็นคนที่อยู่ข้างๆ แบบไม่ต้องพยายาม`,
+      `เค้าสัญญาว่าจะคุยกันด้วยความตั้งใจ ไม่หนี ไม่ปล่อยให้เบบี๋อยู่กับความรู้สึกคนเดียว`,
+      `ถ้าเราทะเลาะกัน เค้าจะไม่ใช้ความเงียบเป็นโทษ`,
+      `เค้าจะจับมือเบบี๋ไว้ แล้วค่อยๆ ผ่านมันไปด้วยกัน`,
+      `เค้าไม่ได้อยากเป็นคนที่รักเบบี๋มากที่สุดในโลก`,
+      `เค้าอยากเป็นคนที่รักเบบี๋ "ดีที่สุด" ในชีวิต`,
+      `แล้ววันนี้ เบบี๋เป็นแฟนกับปะปี๊นะ 💘`
+    ];
+
+    const PROMISE_TEXT = `
+<b>สัญญาจาก ${BABY_CALLS_ME} ถึง ${LOVER_NAME} 💞</b><br><br>
+1) ปะปี๊จะทำให้เบบี๋เป็นผู้หญิงที่โชคดีที่สุดในโลกเลยที่ได้แฟนน่ารักที่สุด<br>
+2) ปะปี๊จะรับฟังให้จบก่อน จะไม่รีบตัดสิน และจะไม่ทำให้เบบี๋รู้สึกว่า "พูดไปก็เท่านั้น"<br>
+3) ปะปี๊จะซื่อสัตย์กับความรู้สึก จะดูแลกันด้วยความเคารพ ไม่ทำร้ายกันด้วยคำพูดหรือความเงียบ<br>
+4) ถ้าวันไหนเบบี๋อ่อนแอ ปะปี๊จะไม่เร่งให้เข้มแข็ง ปะปี๊จะอยู่ตรงนี้จนกว่าเบบี๋จะไหว<br>
+5) ปะปี๊จะจำเรื่องเล็กๆ ของเบบี๋ให้ได้ และจะทำให้เบบี๋รู้สึกว่าตัวเองมีค่าเสมอ<br><br>
+<b>ปะปี๊ไม่ได้สัญญาว่าจะสมบูรณ์แบบ</b><br>
+แต่ปะปี๊สัญญาว่าจะรักเบบี๋ในทุกๆวัน และเพิ่มมากขึ้นเรื่อยๆเลย 💘
+    `.trim();
+
+    const QUESTION_TITLE = "เป็นแฟนกันนะ 🥺";
+    const QUESTION_DESC = `ปะปี๊อยากอยู่ข้างๆ แบบนี้ตลอดไป อยากดูแลเบบี๋ในทุกๆเรื่องของชีวิต ไม่ใช่แค่ในวันที่ดี`;
+    const ACCEPT_TITLE = `${LOVER_NAME} ตอบใช่แล้ว 💘`;
+    const ACCEPT_MSG = `ขอบคุณที่เลือกปะปี๊นะ เบบี๋ ปะปี๊จะทำให้ความรักของเราเป็นที่ปลอดภัยของเบบี๋เสมอ 💗`;
+
+    /********************
+     * Helpers
+     ********************/
+    const $ = (q) => document.querySelector(q);
+    const el = (t,c)=>{ const d=document.createElement(t); if(c) d.className=c; return d; };
+    const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+    const rand=(a,b)=>Math.random()*(b-a)+a;
+
+    function toast(msg){
+      const t = $("#toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      clearTimeout(toast._tm);
+      toast._tm=setTimeout(()=>t.classList.remove("show"), 2200);
+    }
+
+    function showSparkWord(x, y){
+      const s = el("div","spark-word");
+      s.style.left = x + "px";
+      s.style.top  = y + "px";
+      s.innerHTML = `<span class="txt">${BABY_CALLS_ME} ✨</span>`;
+      document.body.appendChild(s);
+      setTimeout(()=> s.remove(), 900);
+    }
+
+    /********************
+     * Fill content
+     ********************/
+    $("#headline").textContent = HEADLINE;
+    $("#introText").textContent = INTRO;
+    $("#pillDate").textContent = "📅 " + DATE_TEXT;
+    $("#qTitle").textContent = QUESTION_TITLE;
+    $("#qDesc").textContent  = QUESTION_DESC;
+    $("#acceptTitle").textContent = ACCEPT_TITLE;
+    $("#acceptMsg").textContent   = ACCEPT_MSG;
+    $("#promiseScroll").innerHTML = PROMISE_TEXT;
+    $("#stampText").textContent = `💘 ทำด้วยใจ โดย ${BABY_CALLS_ME} ให้ ${LOVER_NAME}`;
+
+    /********************
+     * Photo (กรอบยืดตามรูป)
+     ********************/
+    function setupMainPhoto(){
+      const box = $("#mainPhoto");
+      if(PHOTO_URL && PHOTO_URL.trim()){
+        box.innerHTML = "";
+        const img = new Image();
+        img.src = PHOTO_URL.trim();
+        img.alt = "รูปของเค้ากับเบบี๋";
+
+        img.onload = () => {
+          box.classList.add("has-img"); // ✅ ทำให้กรอบยืดตามรูป
+        };
+
+        img.onerror = ()=> {
+          box.classList.remove("has-img");
+          box.innerHTML = `<div class="ph"><b>โหลดรูปไม่สำเร็จ</b>เช็กชื่อไฟล์ให้ตรงนะ</div>`;
+        };
+
+        box.appendChild(img);
+      } else {
+        box.classList.remove("has-img");
+      }
+    }
+    setupMainPhoto();
+
+    /********************
+     * Typewriter
+     ********************/
+    async function typewriter(lines){
+      const out = $("#typeText");
+      out.textContent = "";
+      for(const line of lines){
+        for(const ch of line){
+          out.textContent += ch;
+          await new Promise(r=>setTimeout(r, 18));
+        }
+        out.textContent += "\n";
+        await new Promise(r=>setTimeout(r, 220));
+      }
+    }
+
+    /********************
+     * Love meter
+     ********************/
+    let meter = 0;
+    function setMeter(v){
+      meter = clamp(v, 0, 100);
+      $("#meterFill").style.width = meter + "%";
+      $("#meterLabel").textContent = meter >= 100 ? "หวานมาก 💗" : `ความรัก ${meter.toFixed(0)}%`;
+    }
+    setTimeout(()=> setMeter(72), 520);
+
+    /********************
+     * Floating hearts (hover -> “ปะปี๊” spark)
+     ********************/
+    const HEARTS = ["💗","💖","💘","💕","💞","💝"];
+    function spawnHeart(burst=false){
+      const h = el("div","heart");
+      h.textContent = HEARTS[Math.floor(Math.random()*HEARTS.length)];
+
+      const x = rand(0, innerWidth);
+      const size = burst ? rand(18, 30) : rand(14, 22);
+      const dur  = burst ? rand(2.0, 3.2) : rand(4.6, 7.0);
+      const drift= (Math.random()<.5?-1:1)*rand(30, 140);
+
+      h.style.left = x + "px";
+      h.style.fontSize = size + "px";
+      h.style.animationDuration = dur + "s";
+      h.style.setProperty("--drift", drift + "px");
+
+      let last = 0;
+      const spark = (cx, cy) => {
+        const now = Date.now();
+        if(now - last < 180) return;
+        last = now;
+        showSparkWord(cx, cy);
+      };
+
+      h.addEventListener("mouseenter", ()=>{
+        const r = h.getBoundingClientRect();
+        spark(r.left + r.width/2, r.top + r.height/2);
+      });
+      h.addEventListener("mousemove", (e)=>{
+        spark(e.clientX, e.clientY);
+      });
+      h.addEventListener("touchstart", (e)=>{
+        const t = e.touches && e.touches[0];
+        const r = h.getBoundingClientRect();
+        spark(t ? t.clientX : (r.left+r.width/2), t ? t.clientY : (r.top+r.height/2));
+      }, {passive:true});
+
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(), dur*1000);
+    }
+    setInterval(()=>spawnHeart(false), 620);
+
+    function heartRain(ms=2400){
+      const start = Date.now();
+      const t = setInterval(()=>{
+        spawnHeart(true);
+        if(Date.now()-start > ms) clearInterval(t);
+      }, 60);
+    }
+
+    /********************
+     * Canvas Confetti
+     ********************/
+    const canvas = $("#fx");
+    const ctx = canvas.getContext("2d");
+    let parts = [];
+    let running = false;
+
+    function resize(){
+      canvas.width = innerWidth * devicePixelRatio;
+      canvas.height = innerHeight * devicePixelRatio;
+      canvas.style.width = innerWidth + "px";
+      canvas.style.height = innerHeight + "px";
+      ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+    }
+    addEventListener("resize", resize);
+    resize();
+
+    function makeConfetti(n=220){
+      const p=[];
+      for(let i=0;i<n;i++){
+        p.push({
+          x: rand(0, innerWidth),
+          y: rand(-40, innerHeight*0.25),
+          vx: rand(-2.4, 2.4),
+          vy: rand(2.0, 6.2),
+          a: rand(0, Math.PI*2),
+          va: rand(-0.25, 0.25),
+          r: rand(2, 6),
+          life: rand(70, 140),
+          color: `hsla(${Math.floor(rand(0,360))}, 90%, 72%, .92)`
+        });
+      }
+      return p;
+    }
+    function makeBurst(x,y, n=90){
+      const p=[];
+      for(let i=0;i<n;i++){
+        const ang = rand(0, Math.PI*2);
+        const spd = rand(1.8, 5.8);
+        p.push({
+          x, y,
+          vx: Math.cos(ang)*spd,
+          vy: Math.sin(ang)*spd,
+          a: rand(0, Math.PI*2),
+          va: rand(-0.35, 0.35),
+          r: rand(1.4, 4.2),
+          life: rand(45, 90),
+          color: `hsla(${Math.floor(rand(0,360))}, 92%, 70%, .92)`
+        });
+      }
+      return p;
+    }
+
+    function draw(){
+      if(!running) return;
+      ctx.clearRect(0,0,innerWidth,innerHeight);
+
+      parts.forEach(p=>{
+        p.x += p.vx;
+        p.y += p.vy;
+        p.a += p.va;
+        p.vy += 0.03;
+        p.life -= 1;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.a);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.r, -p.r, p.r*2.4, p.r*1.3);
+        ctx.restore();
+      });
+
+      parts = parts.filter(p=>p.life>0 && p.y < innerHeight+100 && p.x>-120 && p.x<innerWidth+120);
+
+      if(parts.length===0){
+        running=false;
+        canvas.classList.remove("show");
+        return;
+      }
+      requestAnimationFrame(draw);
+    }
+
+    function boom(){
+      resize();
+      canvas.classList.add("show");
+      parts = parts.concat(makeConfetti(240));
+      parts = parts.concat(makeBurst(innerWidth*0.25, innerHeight*0.35, 120));
+      parts = parts.concat(makeBurst(innerWidth*0.72, innerHeight*0.38, 120));
+      parts = parts.concat(makeBurst(innerWidth*0.50, innerHeight*0.24, 140));
+      running=true;
+      draw();
+    }
+
+    /********************
+     * Music
+     ********************/
+    const audio = $("#bgm");
+    if(MUSIC_URL && MUSIC_URL.trim()){
+      audio.src = MUSIC_URL.trim();
+      audio.loop = true;
+      audio.volume = 0.85;
+    }
+    let musicOn=false;
+    async function toggleMusic(){
+      if(!MUSIC_URL || !MUSIC_URL.trim()){
+        toast("ยังไม่ได้ใส่เพลงนะ ตั้งค่า MUSIC_URL ก่อน");
+        return;
+      }
+      try{
+        if(!musicOn){
+          await audio.play();
+          musicOn=true;
+          $("#btnMusic").textContent="🔇 ปิดเพลง";
+          toast("เปิดเพลงแล้ว 🎶");
+        }else{
+          audio.pause();
+          musicOn=false;
+          $("#btnMusic").textContent="🎵 เปิดเพลง";
+          toast("ปิดเพลงแล้ว");
+        }
+      }catch(e){
+        toast("ถ้าเพลงไม่เล่น ลองกดอีกครั้งหลังคลิกหน้าเว็บ");
+      }
+    }
+    $("#btnMusic").addEventListener("click", toggleMusic);
+
+    /********************
+     * Main buttons
+     ********************/
+    $("#btnStart").addEventListener("click", async ()=>{
+      heartRain(2200);
+      setMeter(90);
+      await typewriter(TYPE_LINES);
+      toast(`อ่านจบแล้วนะ ${LOVER_NAME} ตอบหน่อย 😳💗`);
+    });
+
+    $("#btnRain").addEventListener("click", ()=> heartRain(2400));
+
+    $("#btnCopy").addEventListener("click", async ()=>{
+      const msg = `ถึง ${LOVER_NAME} 💗\n\n${INTRO}\n\nจาก ${BABY_CALLS_ME}`;
+      try{
+        await navigator.clipboard.writeText(msg);
+        toast("คัดลอกแล้ว ส่งให้เบบี๋ได้เลย 💌");
+      }catch(e){
+        toast("คัดลอกไม่ได้ ลองเปิดผ่าน http://localhost นะ");
+      }
+    });
+
+    $("#btnBoom").addEventListener("click", ()=>{
+      boom();
+      heartRain(1600);
+      toast(`ปะปี๊ขอฉลองหน่อย 💘`);
+    });
+
+    /********************
+     * “No” button dodge
+     ********************/
+    const noBtn = $("#btnNo");
+    const qActions = $("#qActions");
+    function dodge(){
+      const rect = qActions.getBoundingClientRect();
+      const bw = noBtn.offsetWidth;
+      const bh = noBtn.offsetHeight;
+      const maxX = rect.width - bw;
+      const maxY = rect.height - bh;
+      const x = Math.max(0, Math.min(maxX, Math.random()*maxX));
+      const y = Math.max(0, Math.min(maxY, Math.random()*maxY));
+      noBtn.style.position="absolute";
+      noBtn.style.left = x + "px";
+      noBtn.style.top  = y + "px";
+    }
+    noBtn.addEventListener("mouseenter", dodge);
+    noBtn.addEventListener("click", ()=>{
+      dodge();
+      toast("ปุ่มนี้กดไม่ได้จริงๆ 😳");
+    });
+
+    /********************
+     * YES => celebrate
+     ********************/
+    const modal = $("#modal");
+    $("#btnYes").addEventListener("click", ()=>{
+      modal.classList.add("show");
+      setMeter(100);
+      boom();
+      heartRain(4200);
+      toast(`${LOVER_NAME} เลือกปะปี๊แล้ว 💞💘`);
+    });
+    $("#btnClose").addEventListener("click", ()=> modal.classList.remove("show"));
+    $("#btnMore").addEventListener("click", ()=>{ boom(); heartRain(2000); });
+    $("#btnHint").addEventListener("click", ()=> toast("วิธีส่ง: รัน localhost แล้วอัปขึ้น GitHub Pages/Netlify ได้"));
+    modal.addEventListener("click", (e)=>{ if(e.target===modal) modal.classList.remove("show"); });
+
+    // gentle start
+    setTimeout(()=> typewriter([TYPE_LINES[0], TYPE_LINES[1]]), 450);
+  </script>
+</body>
+</html>
